@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.inhatc.spring.model.mapper.BoardMapper">
+  <select id="selectBoard" resultType="BoardDTO">
+    SELECT board_idx, title, hit_cnt, to_char(create_datetime, 'YYYY-MM-DD') as create_datetime FROM "t_board"
+  </select>
+</mapper>
