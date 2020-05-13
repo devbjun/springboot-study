@@ -2,30 +2,10 @@
   "configurations": [
     {
       "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek7",
+      "name": "CodeLens (Launch) - MyProjectApplicationWeek8",
       "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek7"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek6",
-      "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek6",
-      "projectName": "week5"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek5",
-      "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek5",
-      "projectName": "week4"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek6",
-      "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek6",
-      "projectName": "week6"
+      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek8",
+      "projectName": "week8"
     },
     {
       "type": "java",
@@ -36,43 +16,24 @@
     },
     {
       "type": "java",
-      "name": "Spring Boot-MyProjectApplication<week4>",
+      "name": "CodeLens (Launch) - MyProjectApplicationWeek6",
       "request": "launch",
-      "cwd": "${workspaceFolder}",
-      "console": "internalConsole",
-      "mainClass": "kr.inhatc.spring.week4.MyProjectApplicationWeek4",
-      "projectName": "week4",
-      "args": ""
+      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek6",
+      "projectName": "week6"
     },
     {
       "type": "java",
-      "name": "Spring Boot-MyProjectApplication<week5>",
+      "name": "CodeLens (Launch) - MyProjectApplicationWeek5",
       "request": "launch",
-      "cwd": "${workspaceFolder}",
-      "console": "internalConsole",
-      "mainClass": "kr.inhatc.spring.week5.MyProjectApplicationWeek5",
-      "projectName": "week5",
-      "args": ""
+      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek5",
+      "projectName": "week5"
     },
     {
       "type": "java",
-      "name": "Spring Boot-MyProjectApplication<week6>",
+      "name": "CodeLens (Launch) - MyProjectApplicationWeek4",
       "request": "launch",
-      "cwd": "${workspaceFolder}",
-      "console": "internalConsole",
-      "mainClass": "kr.inhatc.spring.week5.MyProjectApplicationWeek6",
-      "projectName": "week6",
-      "args": ""
-    },
-    {
-      "type": "java",
-      "name": "Spring Boot-MyProjectApplication<week7>",
-      "request": "launch",
-      "cwd": "${workspaceFolder}",
-      "console": "internalConsole",
-      "mainClass": "kr.inhatc.spring.week5.MyProjectApplicationWeek7",
-      "projectName": "week7",
-      "args": ""
+      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek4",
+      "projectName": "week4"
     }
   ]
 }
