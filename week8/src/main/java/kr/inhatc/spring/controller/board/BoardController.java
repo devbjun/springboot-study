@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import kr.inhatc.spring.model.dto.BoardDTO;
 import kr.inhatc.spring.model.service.BoardService;
@@ -39,8 +40,8 @@ public class BoardController {
   }
 
   @RequestMapping(value = "/board/boardInsert")
-  public String boardInsert(BoardDTO board) {
-    BoardService.insertBoard(board);
+  public String boardInsert(BoardDTO board, MultipartHttpServletRequest multipartHttpServletRequest) {
+    BoardService.insertBoard(board, multipartHttpServletRequest);
     return "redirect:/board/boardList";
   }
 

@@ -6,7 +6,7 @@ import lombok.Data;
 public class FileDTO {
     
     private int idx;
-    private int boardIdx;
+    private long boardIdx;
     private String originalFileName;
     private String storedFilePath;
     private long fileSize;

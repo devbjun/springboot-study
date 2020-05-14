@@ -7,10 +7,10 @@
       WHERE delete_yn = 'N'
       ORDER BY board_idx DESC
   </select>
-  <select id="insertBoard" parameterType="BoardDTO">
+  <insert id="insertBoard" parameterType="BoardDTO">
     INSERT INTO "t_board" (board_idx, title, content, hit_cnt, create_datetime, create_id, delete_yn)
     VALUES (default, #{title}, #{content}, default, default, 'admin', default)
-  </select>
+  </insert>
   <select id="detailBoard" parameterType="int" resultType="BoardDTO">
     SELECT board_idx, title, content, hit_cnt, to_char(create_datetime, 'YYYY-MM-DD') as create_datetime, create_id 
       FROM "t_board"
@@ -25,4 +25,10 @@
   <delete id="deleteBoard" parameterType="int">
     DELETE FROM "t_board" WHERE board_idx = #{boardIdx}
   </delete>
+  <insert id="insertBoardFile" parameterType="java.util.List">
+    INSERT INTO "t_file" (idx, board_idx, original_file_name, stored_file_path, file_size, creator_id, create_datetime, deleted_yn) VALUES 
+    <foreach collection="list" item="item" index="index" separator=",">
+      (default, #{item.boardIdx}, #{item.originalFileName}, #{item.storedFilePath}, #{item.fileSize}, 'admin', default, default)
+    </foreach>
+  </insert>
 </mapper>

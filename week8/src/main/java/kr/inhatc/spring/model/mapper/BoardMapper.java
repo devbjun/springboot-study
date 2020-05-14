@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import kr.inhatc.spring.model.dto.BoardDTO;
+import kr.inhatc.spring.model.dto.FileDTO;
 
 @Repository
 @Mapper
@@ -21,4 +22,6 @@ public interface BoardMapper {
   void updateHit(int boardIdx);
 
   void deleteBoard(int boardIdx);
+
+  void insertBoardFile(List<FileDTO> list);
 }
