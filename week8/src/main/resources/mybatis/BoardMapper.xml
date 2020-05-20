@@ -7,7 +7,7 @@
       WHERE delete_yn = 'N'
       ORDER BY board_idx DESC
   </select>
-  <insert id="insertBoard" parameterType="BoardDTO">
+  <insert id="insertBoard" parameterType="BoardDTO" useGeneratedKeys="true" keyProperty="boardIdx">
     INSERT INTO "t_board" (board_idx, title, content, hit_cnt, create_datetime, create_id, delete_yn)
     VALUES (default, #{title}, #{content}, default, default, 'admin', default)
   </insert>
@@ -25,7 +25,7 @@
   <delete id="deleteBoard" parameterType="int">
     DELETE FROM "t_board" WHERE board_idx = #{boardIdx}
   </delete>
-  <insert id="insertBoardFile" parameterType="java.util.List">
+  <insert id="insertBoardFile" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="idx">
     INSERT INTO "t_file" (idx, board_idx, original_file_name, stored_file_path, file_size, creator_id, create_datetime, deleted_yn) VALUES 
     <foreach collection="list" item="item" index="index" separator=",">
       (default, #{item.boardIdx}, #{item.originalFileName}, #{item.storedFilePath}, #{item.fileSize}, 'admin', default, default)

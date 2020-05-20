@@ -12,5 +12,4 @@ public class BoardDTO {
   private String createDatetime;
   private String createId;
   private String deleteYn;
-  
 }
