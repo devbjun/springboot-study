@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - MyProjectApplicationWeek9",
+      "request": "launch",
+      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek9",
+      "projectName": "week9"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - MyProjectApplicationWeek8",
       "request": "launch",
       "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek8",
