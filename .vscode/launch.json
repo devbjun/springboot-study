@@ -2,45 +2,11 @@
   "configurations": [
     {
       "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek9",
+      "name": "CodeLens (Launch) - MyProjectApplicationWeek11",
       "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek9",
-      "projectName": "week9"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek8",
-      "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek8",
-      "projectName": "week8"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek7",
-      "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek7",
-      "projectName": "week7"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek6",
-      "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek6",
-      "projectName": "week6"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek5",
-      "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek5",
-      "projectName": "week5"
-    },
-    {
-      "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek4",
-      "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek4",
-      "projectName": "week4"
+      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek11",
+      "projectName": "week11",
+      "vmArgs": "-Xmx4G -Xms2G"
     }
   ]
 }
