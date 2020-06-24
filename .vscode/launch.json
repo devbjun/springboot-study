@@ -2,21 +2,11 @@
   "configurations": [
     {
       "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek11",
+      "name": "CodeLens (Launch) - MyProjectApplicationWeek13",
       "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek11",
-      "projectName": "week11",
+      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek13",
+      "projectName": "week13",
       "vmArgs": "-Xmx4G -Xms2G"
     },
-    {
-      "type": "java",
-      "name": "Spring Boot-MyProjectApplicationWeek10<week10>",
-      "request": "launch",
-      "cwd": "${workspaceFolder}",
-      "console": "internalConsole",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek10",
-      "projectName": "week10",
-      "args": ""
-    }
   ]
 }

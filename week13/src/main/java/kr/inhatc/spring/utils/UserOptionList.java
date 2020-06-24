@@ -7,24 +7,16 @@ import java.util.Map;
 
 public class UserOptionList {
 
+  @SuppressWarnings("serial")
   private static final List<String> enabledList = new ArrayList<>() {
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-
     {
       add("가능");
       add("불가능");
     }
   };
 
+  @SuppressWarnings("serial")
   private static final List<String> authorityList = new ArrayList<>() {
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-
     {
       add("ROLE_GUEST");
       add("ROLE_MEMBER");
@@ -32,12 +24,8 @@ public class UserOptionList {
     }
   };
 
+  @SuppressWarnings("serial")
   private static final Map<String, List<String>> map = new HashMap<>() {
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-
     {
       put("enabledList", enabledList);
       put("authorityList", authorityList);

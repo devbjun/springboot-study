@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default">
+<th:block layout:fragment="css"></th:block>
+<th:block layout:fragment="script"></th:block>
+<div layout:fragment="content">
+  <div class="container">
+    <h1>죄송합니다. 페이지에 대한 접근 권한이 없네요.</h1>
+    <h3>관리자로 다시 로그인 하세요.</h3>
+    <h4>다시 로그인을 원하시면 <a th:href="@{/login/login}">여기</a>를 누르세요.</h4>
+  </div>
+</div>
+</html>

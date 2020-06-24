@@ -13,7 +13,9 @@
   <name>MyProejct</name>
   <description>인하공업전문대학 LINC+ IoT서버 프레임워크 7주차 과제</description>
   <properties>
-    <java.version>1.8</java.version>
+    <java.version>1.11</java.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
   </properties>
   <dependencies>
     <dependency>
