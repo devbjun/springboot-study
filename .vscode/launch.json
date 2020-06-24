@@ -7,6 +7,16 @@
       "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek11",
       "projectName": "week11",
       "vmArgs": "-Xmx4G -Xms2G"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-MyProjectApplicationWeek10<week10>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek10",
+      "projectName": "week10",
+      "args": ""
     }
   ]
 }
