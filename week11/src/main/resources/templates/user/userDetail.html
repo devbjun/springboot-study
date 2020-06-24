@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default">
+<th:block layout:fragment="css"></th:block>
+<th:block layout:fragment="script">
+  <script type="text/javascript">
+    $(document).ready(() => {
+      $("#list").on("click", () => location.href = "/user/userList");
+      $("#edit").on("click", () => { 
+        let frm = $("#frm")[0];
+        frm.action = "/user/userUpdate/" + document.getElementById('id').value;
+        frm.submit();
+      });
+      $("#delete").on("click", () => { 
+        let frm = $("#frm")[0];
+        frm.action = "/user/userDelete/" + document.getElementById('id').value;
+        frm.submit();
+      });
+    })
+  </script>
+</th:block>
+<div layout:fragment="content">
+  <div class="container">
+    <h2>사용자 상세</h2>
+    <form id="frm" name="frm" method="POST">
+      <table class="table table-bordered">
+        <tr>
+          <th>회원 번호</th>
+          <td><input type="text" id="id" name="id" th:value="${user.id}" disabled /></td>
+        </tr>
+        <tr>
+          <th>아이디</th>
+          <td><input type="text" id="account" name="account" th:value="${user.account}" disabled /></td>
+        </tr>
+        <tr>
+          <th>비밀번호</th>
+          <td><input type="text" id="password" name="password" th:value="${user.password}" /></td>
+        </tr>
+        <tr>
+          <th>이름</th>
+          <td><input type="text" id="name" name="name" th:value="${user.name}" /></td>
+        </tr>
+        <tr>
+          <th>이메일</th>
+          <td><input type="text" id="email" name="email" th:value="${user.email}" /></td>
+        </tr>
+        <tr>
+          <th>권한</th>
+          <td><input type="text" id="role" name="role" th:value="${user.role}" /></td>
+        </tr>
+        <tr>
+          <th>활성화 여부</th>
+          <td><input type="text" id="enabled" name="enabled" th:value="${user.enabled}" disabled /></td>
+        </tr>
+        <tr>
+          <th>가입일자</th>
+          <td><input type="text" id="joinDate" name="joinDate" th:value="${user.joinDate}" disabled /></td>
+        </tr>
+      </table>
+      <input type="button" id="list" value="목록으로" class="btn btn-primary btn-sm" />
+      <input type="button" id="edit" value="수정하기" class="btn btn-primary btn-sm" />
+      <input type="button" id="delete" value="삭제하기" class="btn btn-primary btn-sm" />
+    </form>
+  </div>
+</div>
+</html>
