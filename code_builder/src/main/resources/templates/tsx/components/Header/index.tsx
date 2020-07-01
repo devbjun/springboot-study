@@ -12,15 +12,18 @@ export default () => {
   const onClickHandler = (e: any) => {
     axios.post('http://localhost:8000/build', { code: data.code })
     .then((res) => {
+      const data = String(res.data);
       updateResult({
-        state: (res.data.search('Exception') != -1) ? 'error' : ((res.data == 'undefined') ? 'warning' : 'success'),
-        message: (res.data.search('Exception') != -1) ? res.data : ((res.data == 'undefined') ? 'No results.' : res.data)
+        state: (data.search('Exception') != -1) ? 'error' : ((data == 'undefined') ? 'warning' : 'success'),
+        message: (data.search('Exception') != -1) ? data : ((data == 'undefined') ? 'No results.' : data)
       })
     })
-    .catch((err) => updateResult({
-      state: 'error',
-      message: err
-    }));
+    .catch((err) => {
+      updateResult({
+        state: 'error',
+        message: err
+      })
+    });
   }
 
   return (
