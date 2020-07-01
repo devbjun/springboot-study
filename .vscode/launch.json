@@ -2,11 +2,11 @@
   "configurations": [
     {
       "type": "java",
-      "name": "CodeLens (Launch) - MyProjectApplicationWeek13",
+      "name": "CodeLens (Launch) - Code Builder",
       "request": "launch",
-      "mainClass": "kr.inhatc.spring.MyProjectApplicationWeek13",
-      "projectName": "week13",
+      "mainClass": "kr.ac.inhatc.CodeBuilder",
+      "projectName": "code_builder",
       "vmArgs": "-Xmx4G -Xms2G"
-    },
+    }
   ]
 }
