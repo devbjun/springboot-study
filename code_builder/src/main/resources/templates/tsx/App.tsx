@@ -13,6 +13,7 @@ import rootReducer from './models';
 const store = createStore(rootReducer);
 
 const App = () => {
+
   return (
     <div className="App">
       <Header />

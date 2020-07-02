@@ -1,29 +1,102 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 
-import { useData } from '../../hooks/data/useData';
-import { useUpdateResult } from '../../hooks/data/useUpdateResult';
+import { Language } from '../../models/language/types.ts';
+import { useLanguage } from '../../hooks/language/useLanguage';
+import { useSelectLanguage } from '../../hooks/language/useSelectLanguage';
+
+import { useJS } from '../../hooks/javascript/useJS';
+import { useUpdateJSCode } from '../../hooks/javascript/useUpdateJSCode';
+import { useUpdateJSResult } from '../../hooks/javascript/useUpdateJSResult';
+
+import { usePython } from '../../hooks/python/usePython';
+import { useUpdatePyCode } from '../../hooks/python/useUpdatePyCode';
+import { useUpdatePyResult } from '../../hooks/python/useUpdatePyResult';
+
 
 export default () => {
 
-  const data = useData();
-  const updateResult = useUpdateResult();
+  const lang = useLanguage();
+  const selectLang = useSelectLanguage();
+
+  const js = useJS();
+  const updateJSCode = useUpdateJSCode();
+  const updateJSResult = useUpdateJSResult();
+
+  const python = usePython();
+  const updatePyCode = useUpdatePyCode();
+  const updatePyResult = useUpdatePyResult();
+
+  useEffect(() => {
+    selectLang(Language.JAVASCRIPT);
+    updateJSCode('// Code');
+    updatePyCode('# Code');
+  }, []);
 
   const onClickHandler = (e: any) => {
-    axios.post('http://localhost:8000/build', { code: data.code })
+
+    const data = {
+      mode: '',
+      code: ''
+    };
+
+    switch (lang) {
+      case Language.JAVASCRIPT:
+        data.mode = 'js';
+        data.code = js.code;
+        break;
+      case Language.PYTHON:
+        data.mode = 'python';
+        data.code = python.code;
+        break;
+      default:
+        data.mode = 'js';
+        data.code = js.code;
+    };
+
+    axios.post('http://localhost:8000/build', data)
     .then((res) => {
-      const data = String(res.data);
-      updateResult({
-        state: (data.search('Exception') != -1) ? 'error' : ((data == 'undefined') ? 'warning' : 'success'),
-        message: (data.search('Exception') != -1) ? data : ((data == 'undefined') ? 'No results.' : data)
-      })
+      switch (lang) {
+        case Language.JAVASCRIPT:
+          updateJSResult(res.data);
+          break;
+        case Language.PYTHON:
+          updatePyResult(res.data);
+          break;
+        default:
+          updateJSResult(res.data);
+      };
     })
     .catch((err) => {
-      updateResult({
+      const res = {
         state: 'error',
         message: err
-      })
+      };
+
+      switch (lang) {
+        case Language.JAVASCRIPT:
+          updateJSResult(res);
+          break;
+        case Language.PYTHON:
+          updatePyResult(res);
+          break;
+        default:
+          updateJSResult(res);
+      };
     });
+  }
+
+  const onClickHandlerDropDown = (e: any) => {
+    switch (e.target.innerText) {
+      case 'JavaScript':
+        selectLang(Language.JAVASCRIPT);
+        break;
+      case 'Python':
+        selectLang(Language.PYTHON);
+        break;
+      default:
+        selectLang(Language.JAVASCRIPT);
+    }
   }
 
   return (
@@ -31,12 +104,37 @@ export default () => {
       <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
-            <img src="/img/logo.png" width="112" height="28" />
+            <strong style={{ fontSize: '24px' }}>Code Builder</strong>
           </a>
+
+          <div className="navbar-item has-dropdown is-hoverable has-background-dark">
+            <div className="navbar-link">
+              {(() => {
+                  switch (lang) {
+                    case Language.JAVASCRIPT:
+                      return 'JavaScript';
+                    case Language.PYTHON:
+                      return 'Python';
+                    default:
+                      return 'JavaScript';
+                  };
+                })()
+              }
+            </div>
+
+            <div className="navbar-dropdown has-background-dark">
+              <div className="navbar-item has-text-white" onClick={ onClickHandlerDropDown } style={{ cursor: 'pointer' }}>
+                JavaScript
+              </div>
+              <div className="navbar-item has-text-white" onClick={ onClickHandlerDropDown } style={{ cursor: 'pointer' }}>
+                Python
+              </div>
+            </div>
+          </div>
           
           <div className="navbar-item" style={{ position: 'absolute', top: -2.5, right: 0 }}>
             <div className="button is-primary" onClick={ onClickHandler } style={{ width: '75px' }}>
-              <strong>Run</strong>
+              <strong>실행</strong>
             </div>
           </div>
         </div>

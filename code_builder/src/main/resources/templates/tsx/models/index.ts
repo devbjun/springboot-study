@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
-import data from './data';
+import language from './language';
+import javascript from './javascript';
+import python from './python';
 
 const rootReducer = combineReducers({
-  data
+  language,
+  javascript,
+  python
 });
 
 export default rootReducer;
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;
